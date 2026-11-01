@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulation Results</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <style>
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    pre {
+      background: #f7f7f9;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 14px;
+    }
+    button {
+      background: #2563eb;
+      color: #fff;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+    button:hover {
+      background: #1e4fbe;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Simulation Results</h1>
+    <p>The last simulation output is displayed below:</p>
+    <pre id="report"></pre>
+    <button onclick="window.print()">Print Results</button>
+    <a href="/ui" class="btn" style="margin-left:10px;">Back to Simulator</a>
+  </div>
+
+  <script>
+    // Load the last simulation results saved in localStorage
+    const data = JSON.parse(localStorage.getItem('last_sim')) || {};
+    document.getElementById('report').textContent = JSON.stringify(data, null, 2);
+  </script>
+</body>
+</html>

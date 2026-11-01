@@ -1,0 +1,11 @@
+# Compiled binaries
+a.out
+test
+tempCodeRunnerFile
+tempCodeRunnerFile.c
+
+# Environment & IDE
+.DS_Store
+.vscode/
+__pycache__/
+*.pyc

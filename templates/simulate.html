@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simulate</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<div class="app">
+<h2>Allocation Simulator</h2>
+<div class="card">
+<label>Memory size:</label>
+<input id="memsize" type="number" value="256" />
+<label>Algorithm:</label>
+<select id="alg">
+<option value="first_fit">First Fit</option>
+<option value="best_fit">Best Fit</option>
+<option value="worst_fit">Worst Fit</option>
+</select>
+<label>Processes (JSON array, e.g. [{id:'P1',size:50},...]):</label>
+<textarea id="procs">[{"id":"P1","size":50},{"id":"P2","size":80},{"id":"P3","size":20}]</textarea>
+<button id="runAlloc">Run Allocation</button>
+</div>
+
+<h2>Paging Simulator</h2>
+<div class="card">
+<label>Frames:</label>
+<input id="frames" type="number" value="3" />
+<label>Reference string (comma-separated):</label>
+<input id="refs" type="text" value="7,0,1,2,0,3,0,4,2,3,0,3" />
+<label>Policy:</label>
+<select id="policy">
+<option value="fifo">FIFO</option>
+<option value="lru">LRU</option>
+<option value="optimal">Optimal</option>
+</select>
+<button id="runPage">Run Paging</button>
+</div>
+
+<div id="output"></div>
+</div>
+<script src="/static/script.js"></script>
+</body>
+</html>
